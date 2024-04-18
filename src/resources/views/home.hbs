@@ -1,0 +1,670 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.js"></script>
+{{!--
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script> --}}
+{{!-- --}}
+<nav class="header fixed-top" style="background-color: #fff;">
+    <div class="row" style="margin: 5px 10px;">
+        <div class="col-1 icon-header flex items-center col-sm-1">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="col-8 col-sm-8 icon-header">
+            <div class="search">
+                <input type="text" value="Chai phục hồi, làm mới, làm bóng đồ da"
+                    style="font-size: 14px; color: rgb(115, 115, 115);" disabled>
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="col-1 icon-header flex items-center col-sm-1">
+            <i class="fas fa-share"></i>
+        </div>
+        <div class="col-1 icon-header flex items-center col-sm-1">
+            <i class="fas fa-cart-plus"></i>
+        </div>
+        <div class="col-1 icon-header flex items-center col-sm-1">
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </div>
+
+    <div class="row tabs" style="margin: 0 10px;">
+        <div class="menu-item col-3 col-sm-3 tab-item active">
+            <p class="title-nav text-center">Tổng quan</p>
+        </div>
+        <div class="menu-item col-3 col-sm-3 tab-item">
+            <p class="title-nav text-center">Đánh giá</p>
+        </div>
+        <div class="menu-item col-3 col-sm-3 tab-item">
+            <p class="title-nav text-center">Mô tả</p>
+        </div>
+        <div class="menu-item col-3 col-sm-3 tab-item">
+            <p class="title-nav text-center">Thông tin</p>
+        </div>
+
+    </div>
+
+    <div style="height: 5px;
+    background-color: whitesmoke;"></div>
+
+
+    <!-- Tab content -->
+    <div class="tab-content">
+        <div class="tab-pane active">
+
+
+        </div>
+        <div class="tab-pane">
+
+        </div>
+        <div class="tab-pane">
+
+        </div>
+        <div class="tab-pane">
+
+
+        </div>
+    </div>
+</nav>
+
+<script>
+    $(document).ready(function () {
+        const tabs = $(".tab-item");
+        const panes = $(".tab-pane");
+
+        const tabActive = $(".tab-item.active");
+        const line = $(".tabs .line-tab");
+
+        tabs.each(function (index) {
+            const pane = panes.eq(index);
+
+            $(this).on('touchstart click', function (e) {
+                e.preventDefault();
+                $(".tab-item.active").removeClass("active");
+                $(".tab-pane.active").removeClass("active");
+
+                $(this).addClass("active");
+                pane.addClass("active");
+            });
+        });
+    });
+
+
+</script>
+
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper" style="margin-top: 105px;">
+        <!-- Slides -->
+        <div class="swiper-slide"><img style="height: 45vh; width: 100%" src="/image/d2.png" alt="">
+        </div>
+        <div class="swiper-slide"><img style="height: 45vh; width: 100%" src="/image/d3.png" alt="">
+        </div>
+        <div class="swiper-slide"><img style="height: 45vh; width: 100%" src="/image/d4.png" alt="">
+        </div>
+        <div class="swiper-slide"><img style="height: 45vh; width: 100%" src="/image/a1.png" alt="">
+        </div>
+        <div class="swiper-slide"><img style="height: 45vh; width: 100%" src="/image/d1.png" alt="">
+        </div>
+        <div class="swiper-slide"><img style="height: 45vh; width: 100%" src="/image/a3.png" alt="">
+        </div>
+
+    </div>
+    <div>
+        <img src="/image/i3.png" style="width: 100%;" alt="">
+    </div>
+</div>
+
+<div>
+    <div style="margin: 15px 18px 5px 18px;">
+        <div class="col-12 col-sm-12">
+            <span style="font-size: 19px; font-weight: 600; color: #fe2c55">99.000<u
+                    style="font-size: 17px;">đ</u></span>
+            <span style="font-size: 14px;text-decoration: line-through; color: #737171; margin: 0 10px;">
+                150000<u style="font-size: 13px; text-decoration-color: rgba(0, 0, 0, 0.5);">đ</u>
+            </span>
+            <span
+                style="font-size: 12px;font-weight: 600; color: #fe2c55; background: rgba(254, 44, 85, 0.06); padding: 5px; ">-34%</span>
+        </div>
+        <div class="flex">
+            <span class="col-11 col-sm-11" style="font-size: 17px; color: black">Chai phục hồi, làm mới, làm bóng đồ
+                da</span>
+            <span class="col-1 col-sm-1" style="font-size: 15px;"><i class="fas fa-bookmark"></i></span>
+        </div>
+        <div class="flex" style="font-size: 14px; margin: 7px 0 10px 0">
+            <div class="col-4 col-sm-4">
+                <span><i class="fas fa-star star"></i></span>
+                <span><span style="font-weight: 600;">4.9</span>/5 (8.6k)</span>
+            </div>
+            <div class="col-4 col-sm-4">
+                <span style="color: #737171;">Đã bán</span>
+                <span style="font-weight: 600; font-size: 15px;">39.5k</span>
+            </div>
+        </div>
+        <div style="color: rgb(143, 101, 101); background-color: rgb(251, 251, 251); padding: 6px 10px;">
+            <span><i class="fas fa-trophy" style="font-size: 13px;"></i></span>
+            <span style="font-weight: 600; font-size: 14px;">Sản phẩm bán chạy</span>
+        </div>
+    </div>
+    <div class="row about">
+        <div class="col-4 col-sm-4 flex content-center items-center">
+            <span><i class="fas fa-money-check-alt"></i></span>
+            <span class="text-about">Thanh toán bảo mật</span>
+        </div>
+        <div class="col-4 col-sm-4 flex content-center items-center" style="padding: 0;">
+            <span><i class="fas fa-file-excel"></i></span>
+            <span class="text-about">Hủy đơn dễ dàng</span>
+        </div>
+        <div class="col-4 col-sm-4 flex content-center items-center">
+            <span><i class="fas fa-comment"></i></span>
+            <span class="text-about">Đội ngũ hỗ trợ 24/7</span>
+        </div>
+    </div>
+
+</div>
+<div class="line"></div>
+<div class="voucher">
+    <p class="title">Voucher & Khuyến mãi</p>
+
+    <div class="discount">
+        <p class="text-voucher col-12 col-sm-12" style="color: #000">Voucher giảm phí vận chuyển
+        </p>
+        <div class="flex">
+            <div class="col-9 col-sm-9">
+                <span>Giảm 45000<u>đ</u> phí vận chuyển, không có số tiền chi tiêu tối thiểu</span>
+            </div>
+            <div class="col-3 col-sm-3">
+                <button class="wrapper outline outline-2 small" style="font-size: 14px;" data-toggle="modal"
+                    data-target="#ModalCenter">Sử
+                    dụng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<div style="margin: 10px 18px; font-size: 13px">
+    <div>
+        <p class="title" style="margin-left: 5px;">Hình thức thanh toán</p>
+        <p style="margin: 0 0 10px 5px;">
+            <span
+                style="background-color: rgb(58, 182, 125); color: #fff; padding: 3px; border-radius: 4px; font-size: 14px">COD</span>
+            <span style="color: rgb(115, 115, 115);">Thanh toán bằng tiền mặt (COD)</span>
+        </p>
+        <div class="line-small" style="margin: 5px 0;"></div>
+        <div class="flex">
+            <div class="title col-8 col-sm-8">Vận chuyển</div>
+
+            <div class="col-4 col-sm-4 flex" style="font-size: 13px; justify-content: flex-end;">
+                <span style="font-size: 13px;text-decoration: line-through; color: #737171; margin: 0 10px;">
+                    30.000<u style="font-size: 13px; text-decoration-color: rgba(0, 0, 0, 0.5);">đ</u>
+                </span>
+                <span style="color: #fe2c55;">Free</span>
+            </div>
+        </div>
+        <div style="margin-left: 5px; color: rgb(115, 115, 115);">
+
+            <span class="" style="color: #42c9dd; border: 1px solid #42c9dd; padding: 1px 3px">Voucher giảm phí vận
+                chuyển</span>
+            <span>Giảm 45000<u>đ</u> phí vận chuyển, không có số tiền chi tiêu tối thiểu</span>
+        </div>
+        <p style="margin-left: 5px; color: rgb(115, 115, 115);">Từ Hà Nội</p>
+        <p style="margin: 0 0 10px 5px; color: rgb(115, 115, 115);">Ngày giao hàng dự kiến: 2-3 ngày</p>
+        <div class="line-small" style="margin: 5px 0;"></div>
+        <p class="title" style="margin-left: 5px;">Chính sách đổi trả</p>
+        <p style="margin-left: 5px; color: rgb(115, 115, 115);">Trả hàng trong vòng 7 ngày. Hủy đơn dễ dàng</p>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<div style="margin: 0px 18px 10px 18px;">
+    <div>
+        <p class="title" style="font-size: 15px; margin-bottom:10px">Đánh giá của khách hàng (8.6k)</p>
+        <p>
+            <span><span style="font-weight: 600; font-size: 16px">4.9</span> / 5</span>
+            <span><i class="fas fa-star star"></i></span>
+            <span><i class="fas fa-star star"></i></span>
+            <span><i class="fas fa-star star"></i></span>
+            <span><i class="fas fa-star star"></i></span>
+            <span><i class="fas fa-star star"></i></span>
+        </p>
+    </div>
+    {{#each comment}}
+    <div style="margin-top: 20px;">
+        <div class="account-item flex items-center">
+            <img class="avatar" src="{{this.avatar}}" alt="">
+            <div class="item-info">
+                <p class="nickname">{{this.username}}.</p>
+                <p class="time">{{formatDateTime }}</p>
+            </div>
+        </div>
+        <div>
+            <span><i class="fas fa-star star"></i></span>
+            <span><i class="fas fa-star star"></i></span>
+            <span><i class="fas fa-star star"></i></span>
+            <span><i class="fas fa-star star"></i></span>
+            <span><i class="fas fa-star star"></i></span>
+        </div>
+        <p style="color: rgb(137, 135, 135); font-size: 13px">Mặt hàng: Chai phục hồi, làm mới, làm bóng đồ da</p>
+        <p style="font-size: 14px;">{{this.content}}</p>
+    </div>
+    <div style="margin: 10px 0;">
+        {{#if this.image.length}}
+        <div class="row">
+            {{#each this.image}}
+            <div class="col-3 col-sm-3" style=" height: 21vw;">
+
+                <button type="button" style="width: 100%; height: 100%;" data-toggle="modal"
+                    data-target="#exampleModalCenter{{this}}">
+                    <img style="width: 100%; height: 100%;" src="{{this}}" alt="">
+                </button>
+
+                <div class="modal fade" id="exampleModalCenter{{this}}" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenter{{this}}Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-body" style="padding: 0;">
+                                <img style="width: 100%;" src="{{this}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {{/each}}
+
+        </div>
+
+        {{/if}}
+    </div>
+
+    {{/each}}
+
+
+    <div class="line-small"></div>
+    <p class="title" style="font-size: 15px; margin-top: 15px">Đánh giá của khách hàng dành cho cửa hàng (32.9k)</p>
+
+    <div style="font-size: 13px;">
+        <div class="row" style="margin: 7px 0;">
+            <div class="col-12 col-sm-12 flex content-center" style="border: 2px solid rgb(217, 217, 217);
+    border-radius: 3px;">
+                <span style="margin-right: 3px;"><i class="fas fa-camera"></i></span>
+                <span>Có Hình ảnh / Video (6.9k)</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-sm-6 flex content-center" style="border: 2px solid rgb(217, 217, 217);
+    border-radius: 3px;">
+                <span>5</span>
+                <span style="margin-left: 2px;"><i class="fas fa-star star"></i></span>
+                <span> (31.6k)</span>
+            </div>
+            <div class="col-6 col-sm-6 flex content-center" style="border: 2px solid rgb(217, 217, 217); border-left:none;
+    border-radius: 3px;">
+                <span>4</span>
+                <span style="margin-left: 2px;"><i class="fas fa-star star"></i></span>
+                <span> (1.2k)</span>
+            </div>
+        </div>
+        <div class="row" style="margin: 7px 0;">
+            <div class="col-6 col-sm-6 flex content-center" style="border: 2px solid rgb(217, 217, 217);
+    border-radius: 3px;">
+                <span>3</span>
+                <span style="margin-left: 2px;"><i class="fas fa-star star"></i></span>
+                <span>(0)</span>
+            </div>
+            <div class="col-6 col-sm-6 flex content-center" style="border: 2px solid rgb(217, 217, 217); border-left:none;
+    border-radius: 3px;">
+                <span>Dưới 2</span>
+                <span style="margin-left: 2px;"><i class="fas fa-star star"></i></span>
+                <span>(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<div style="margin: 0px 18px 10px 18px;">
+    <div class="row info-shop">
+        <div class="col-2 col-sm-3 flex content-center items-center">
+            <img style="width: 100%;" src="/image/avatar.png" alt="">
+        </div>
+        <div class="col-7 col-sm-6 m-auto">
+
+            <p class="name">Tổng Kho Phụ Kiện</p>
+            <p>
+                <span><i class="fas fa-star star"></i></span> <span>4.9</span>
+            </p>
+
+        </div>
+        <div class="col-3 col-sm-3 flex content-center items-center">
+            <button class="wrapper outline small" style="font-size: 14px;">Truy cập</button>
+        </div>
+    </div>
+    <div class="row info-total">
+        <div class="col-2 col-sm-2" style="border-right: 1px solid rgb(222, 222, 222); font-size: 12px">
+            <p style="font-size: 14px; font-weight: 600;">39</p>
+            <p>Mặt hàng</p>
+        </div>
+        <div class="col-2 col-sm-2" style="border-right: 1px solid rgb(222, 222, 222);font-size: 12px ">
+            <p style="font-size: 14px; font-weight: 600;">39</p>
+            <p>Đã bán</p>
+        </div>
+        <div class="col-4 col-sm-4" style="border-right: 1px solid rgb(222, 222, 222);font-size: 12px ">
+            <p style="font-size: 14px;"><span style=" font-weight: 600;">96%</span> <span
+                    style="color: #fe2c55; font-size: 12px; background: rgba(254, 44, 85, 0.06); padding: 3px; margin-left: 10px;">Cao</span>
+            </p>
+            <p>Tỉ lệ trả lời 24h</p>
+        </div>
+        <div class="col-4 col-sm-4" style="font-size: 12px ">
+            <p style="font-size: 14px; font-weight: 600;">96%</p>
+            <p>Xuất kho trong 48h</p>
+        </div>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<div style="margin: 0px 18px 10px 18px;">
+    <div class="title">
+        Giới thiệu về sản phẩm này
+    </div>
+
+    <div style="font-size: 14px;">
+        <div>
+            <p>
+                <span style="font-weight: 600;">Tên sản phẩm:</span>
+                <span> Chai phục hồi, làm mới, làm bóng đồ da, túi ví, áo da giúp kháng nước, kháng bụi</span>
+            </p>
+            <img style="height: 45vh; width: 100%; margin-bottom: 10px; margin-top:10px" src="/image/d2.png" alt="">
+            <img style="height: 45vh; width: 100%; margin-bottom: 10px" src="/image/d3.png" alt="">
+            <img style="height: 45vh; width: 100%; margin-bottom: 10px" src="/image/d4.png" alt="">
+
+        </div>
+
+        <div>
+            <div
+                style="font-weight: 600; font-size: 17px; margin-bottom: 10px; border-top: 1px solid whitesmoke; padding-top: 10px">
+                Công
+                dụng
+                của
+                sản phẩm</div>
+
+            <img style="height: 45vh; width: 100%; margin-bottom: 10px" src="/image/a1.png" alt="">
+            <img style="height: 45vh; width: 100%; margin-bottom: 10px" src="/image/d1.png" alt="">
+            <img style="height: 45vh; width: 100%; margin-bottom: 10px" src="/image/a4.png" alt="">
+        </div>
+
+    </div>
+</div>
+
+
+<div style="margin: 0px 18px 10px 18px; background-color: rgb(255, 255, 255); border-radius: 7px; padding: 20px 25px;
+    box-shadow: rgba(1, 1, 1, 0.2) 0px 0px 20px -5px;">
+    <div>
+        <p class="title text-center" style="font-size: 16px; font-weight: 700">THÔNG TIN ĐẶT HÀNG</p>
+    </div>
+    <form id="form" class="form" action="/dat-hang" method="POST">
+        <div class="form-item">
+            <input class="form-input" type="text" placeholder="Họ và tên" name="name" id="name">
+        </div>
+        <div class="form-item">
+            <input class="form-input" type="text" placeholder="Số điện thoại" name="phone" id="phone">
+        </div>
+        <div class="form-item">
+            <input class="form-input" type="text" placeholder="Địa chỉ" name="address" id="address">
+        </div>
+        <div class="form-item" style="padding-left: 7px;">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="product" id="product-1" value="combo 2 đen" required>
+                <label class="form-check-label" for="product-1">
+                    Combo 2 Chai phục hồi da màu đen - Giá: 99.000đ MIỄN PHÍ SHIP
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="product" id="product-2" value="combo 2 nâu" required>
+                <label class="form-check-label" for="product-2">
+                    Combo 2 Chai phục hổi da màu nâu - Giá 99.000đ MIỄN PHÍ SHIP
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="product" id="product-3" value="combo đen-nâu"
+                    required>
+                <label class="form-check-label" for="product-3">
+                    Combo 2 Chai phụ hổi da đen và nâu - Giá 99.000đ MIỄN PHÍ SHIP
+                </label>
+            </div>
+        </div>
+        <div class="content-center" style="width: 100%; margin-top: 15px">
+            <button type="submit" class="wrapper primary submit">Mua ngay</button>
+        </div>
+    </form>
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#form').submit(function (e) {
+            let isValid = true;
+
+            let name = $('#name');
+            let phone = $('#phone');
+            let address = $('#address');
+
+            $('.form-control').removeClass('is-invalid');
+
+            if (name.val() === "") {
+                name.addClass('is-invalid');
+                isValid = false;
+            } else name.removeClass('is-invalid')
+
+            if (phone.val() === "" || !/^\d{10,11}$/.test(phone.val())) {
+                phone.addClass('is-invalid');
+                isValid = false;
+            } else phone.removeClass('is-invalid')
+
+            if (address.val() === "") {
+                address.addClass('is-invalid');
+                isValid = false;
+            } else address.removeClass('is-invalid')
+
+            if (!isValid) {
+                e.preventDefault(); // Ngăn chặn việc submit form
+            }
+            return isValid;
+        });
+    });
+</script>
+
+<div>
+    <p class="flex content-center" style="font-size: 15px; font-weight: 600;">Tổng Kho Phụ Kiện</p>
+    <p class="flex content-center m-auto">
+        <span style="margin-right: 5px;"><i class="fas fa-map-marker-alt"></i></span>
+        <span class="title-about">Địa chỉ: </span>
+        <span> 49 Trương Định, Hoàng Mai, Hà Nội</span>
+    </p>
+    <p class="flex content-center m-auto">
+        <span style="margin-right: 5px;"><i class="fas fa-phone-volume"></i></span>
+        <span class="title-about">Hotline: </span>
+        <span> 0896.948.270</span>
+    </p>
+    <p class="flex content-center m-auto">
+        <span style="margin-right: 5px;"><i class="fas fa-envelope"></i></span>
+        <span class="title-about">Email: </span>
+        <span> phukien.tienich24@gmail.com</span>
+    </p>
+
+</div>
+
+
+<div style="height: 78px;">
+
+</div>
+
+
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="background-color: rgb(245, 245, 245);">
+            <div style="padding: 15px">
+                <p class="text-center title" style="text-transform: uppercase">Chai phục hồi, làm mới, làm bóng đồ da
+                </p>
+                <p class="text-center" style="color: rgb(115, 115, 115);">Giúp kháng nước, kháng bụi</p>
+
+            </div>
+            <div>
+                <div style="margin: 0px 18px 10px 18px; background-color: rgb(255, 255, 255); border-radius: 7px; padding: 20px 25px;
+    box-shadow: rgba(1, 1, 1, 0.2) 0px 0px 20px -5px;">
+                    <div>
+                        <p class="title text-center" style="font-size: 16px; font-weight: 700">THÔNG TIN ĐẶT HÀNG</p>
+                    </div>
+                    <form id="form-modal" class="form" action="/dat-hang" method="POST">
+                        <div class="form-item">
+                            <input class="form-input" type="text" placeholder="Họ và tên" name="name" id="name-modal">
+                        </div>
+                        <div class="form-item">
+                            <input class="form-input" type="text" placeholder="Số điện thoại" name="phone"
+                                id="phone-modal">
+                        </div>
+                        <div class="form-item">
+                            <input class="form-input" type="text" placeholder="Địa chỉ" name="address"
+                                id="address-modal">
+                        </div>
+                        <div class="form-item" style="padding-left: 7px;">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="product" id="product1"
+                                    value="combo 2 đen" required>
+                                <label class="form-check-label" for="product1">
+                                    Combo 2 Chai phục hồi da màu đen - Giá: 99.000đ MIỄN PHÍ SHIP
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="product" id="product2"
+                                    value="Combo 2 nâu" required>
+                                <label class="form-check-label" for="product2">
+                                    Combo 2 Chai phục hổi da màu nâu - Giá 99.000đ MIỄN PHÍ SHIP
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="product" id="product3"
+                                    value="combo đen-nâu" required>
+                                <label class="form-check-label" for="product3">
+                                    Combo 2 Chai phụ hổi da đen và nâu - Giá 99.000đ MIỄN PHÍ SHIP
+                                </label>
+                            </div>
+                        </div>
+                        <div class="content-center" style="width: 100%; margin-top: 15px">
+                            <button type="submit" class="wrapper primary submit">Mua ngay</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#form-modal').submit(function (e) {
+            let isValid = true;
+
+            let name = $('#name-modal');
+            let phone = $('#phone-modal');
+            let address = $('#address-modal');
+
+            $('.form-input').removeClass('is-invalid');
+
+            if (name.val() === "") {
+                name.addClass('is-invalid');
+                isValid = false;
+            } else name.removeClass('is-invalid')
+
+            if (phone.val() === "" || !/^\d{10}$/.test(phone.val())) {
+                phone.addClass('is-invalid');
+                isValid = false;
+            } else phone.removeClass('is-invalid')
+
+            if (address.val() === "") {
+                address.addClass('is-invalid');
+                isValid = false;
+            } else address.removeClass('is-invalid')
+
+            if (!isValid) {
+                e.preventDefault(); // Ngăn chặn việc submit form
+            }
+            //return isValid;
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        var isMobile = window.matchMedia(
+            "only screen and (max-width: 768px)"
+        ).matches; // Kiểm tra nếu là thiết bị mobile
+
+        var slidesToShow = isMobile ? 1 : 2;
+        // Assign some jquery elements we'll need
+        var $swiper = $(".swiper-container");
+        var $bottomSlide = null; // Slide whose content gets 'extracted' and placed
+        // into a fixed position for animation purposes
+        var $bottomSlideContent = null; // Slide content that gets passed between the
+        // panning slide stack and the position 'behind'
+        // the stack, needed for correct animation style
+
+        var mySwiper = new Swiper(".swiper-container", {
+            spaceBetween: 1,
+            slidesPerView: slidesToShow,
+            centeredSlides: true,
+            roundLengths: true,
+            loop: true,
+            loopAdditionalSlides: 30,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000, // Thời gian chờ giữa các slide (ms)
+                disableOnInteraction: false, // Tự động chuyển slide sau khi người dùng tương tác (true) hoặc không (false)
+            },
+        });
+        console.log(mySwiper);
+        console.log(document);
+    });
+
+</script>
+
+<div class="fixed-bottom row footer" style="height: 70px; background-color: #fff; border-top: 5px solid whitesmoke ">
+    <div class="col-4 col-sm-4 flex">
+        <div class="col-6 col-sm-6 m-auto" style="padding:0">
+            <p class="flex content-center"><i class="fas fa-store icon-footer"></i></p>
+            <p class="store text-center">Cửa hàng</p>
+        </div>
+        <div class="col-6 col-sm-6 m-auto" style="padding: 0;">
+
+            <p class="flex content-center"><i class="fab fa-rocketchat icon-footer"></i></p>
+            <p class="chat text-center">Trò chuyện</p>
+
+        </div>
+
+    </div>
+
+    <div class="col-4 col-sm-4 m-auto flex content-center">
+        <button type="button" class="wrapper outline small" style="font-size: 13px; padding: 6px 10px; height: 42px;"
+            data-toggle="modal" data-target="#ModalCenter">Nhận ưu
+            đãi giảm giá
+            34%</button>
+    </div>
+    <div class="col-4 col-sm-4 m-auto flex content-center">
+        <button type="button" class="wrapper primary" data-toggle="modal" data-target="#ModalCenter"
+            style="font-size: 15px; padding: 6px 10px; height: 42px;">Mua
+            ngay</button>
+    </div>
+
+</div>

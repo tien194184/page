@@ -1,0 +1,207 @@
+<table class="table" style="margin: 20px 0px; border-radius: 10px">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+            <th scope="col">Products</th>
+            <th scope="col">Time</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each orders}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td class="flex content-center">
+                <span class="items-center">
+                    {{#if (equalHelper this.status 'Pending')}}
+                    <i class="fas fa-circle warning" style="font-size: 9px;"></i>
+                    {{/if}}
+
+                    {{#if (equalHelper this.status 'Successful')}}
+                    <i class="fas fa-circle success" style="font-size: 9px;"></i>
+                    {{/if}}
+                </span>
+
+            </td>
+            <td>{{this.phone}}</td>
+            <td>{{this.address}}</td>
+            <td>{{this.products}}</td>
+            <td>{{formatDateTimeOrder this.createdAt}}</td>
+            <td>
+                <span>
+                    <a href="" data-toggle="modal" data-id="{{this._id}}" data-target="#edit-order-modal"> <i
+                            class="far fa-edit" style="color: #0f9faf;"></i></a>
+
+                </span>
+                <span>
+                    <a href="" data-toggle="modal" data-id="{{this._id}}" data-target="#delete-order-modal"><i
+                            class="fas fa-trash" style="color: rgb(236, 52, 52);"></i></a>
+
+                </span>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{!-- edit order --}}
+<div id="edit-order-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="font-size: 16px;">Thay đổi trạng thái đơn hàng?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <button id="btn-warning-order" type="button" class="btn col-12 col-sm-12"
+                    style="background-color: #f5ca99; color: #fff; height: 50px; font-weight: 600; font-size: 16px; margin-bottom: 10px; border-radios: 10px">Pending</button>
+                <button id="btn-success-order" type="button" class="btn success col-12 col-sm-12"
+                    style="background-color: #00c9a7; color: #fff; height: 50px; font-weight: 600; font-size: 16px; border-radios: 10px">Successfull</button>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- confirm delete order --}}
+<div id="delete-order-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="font-size: 16px;">Xóa đơn hàng?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Hành động này không thể khôi phục. Bạc chắc chắn muốn xóa đơn hàng này</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    style="font-size: 16px;">Hủy</button>
+
+                <button id="btn-delete-order" type="button" class="btn btn-danger" style="font-size: 16px;">Xóa
+                    bỏ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form name="delete-order-form" method="POST"></form>
+<form name="edit-order-form" method="POST">
+    <input type="hidden" name="status">
+</form>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        let orderDelete
+
+        const deleteForm = document.forms['delete-order-form']
+
+
+        const btnDeleteOrder = document.getElementById('btn-delete-order')
+
+
+        const statusInput = $('input[name="status"]');
+
+
+        // When dialog confirm clicked
+        $('#delete-order-modal').on('show.bs.modal', function (event) {
+            const button = $(event.relatedTarget)
+            orderDelete = button.data('id')
+        })
+
+        btnDeleteOrder.onclick = function () {
+            deleteForm.action = '/admin/quan-ly-don-hang/' + orderDelete + '?_method=DELETE'
+            deleteForm.submit()
+        }
+
+
+    })
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let orderEdit
+
+        const editForm = document.forms['edit-order-form']
+        const statusInput = document.querySelector('input[name="status"]');
+        const btnWarningOrder = document.getElementById('btn-warning-order')
+        const btnSuccessOrder = document.getElementById('btn-success-order')
+
+        $('#edit-order-modal').on('show.bs.modal', function (event) {
+            const button = $(event.relatedTarget)
+            orderEdit = button.data('id')
+            console.log(orderEdit)
+        })
+        btnWarningOrder.onclick = function () {
+            editForm.action = '/admin/quan-ly-don-hang/' + orderEdit + '?_method=PUT'
+            statusInput.value = 'Pending'
+            console.log(editForm)
+            editForm.submit()
+        }
+        btnSuccessOrder.onclick = function () {
+            editForm.action = '/admin/quan-ly-don-hang/' + orderEdit + '?_method=PUT'
+            statusInput.value = 'Successful'
+            console.log(editForm)
+            editForm.submit()
+        }
+
+    })
+</script>
+
+<div aria-label="Page navigation example" style="font-size: 12px;">
+    <ul class="pagination content-center">
+        <li class="page-item">
+            <a class="page-link {{#unless hasPreviousPage}}disabled{{/unless}}"
+                href="/admin/quan-ly-don-hang/?page={{previousPage}}" aria-label="Previous">
+                <span>Prev</span>
+                <span><i class="fas fa-chevron-left"></i></span>
+            </a>
+        </li>
+
+        {{#if (isEqualTo currentPage 1) }}
+        {{#if (isEqualTo previousPage 1) }}
+        <li class="page-item"><a class="page-link" href="/admin/quan-ly-don-hang/?page=1">1</a></li>
+        {{/if}}
+        {{/if}}
+
+        {{#if hasPreviousPage}}
+        <li class="page-item"><a class="page-link"
+                href="/admin/quan-ly-don-hang/?page={{previousPage}}">{{previousPage}}</a>
+        </li>
+        {{/if}}
+
+        <li class="page-item"><a class="page-link active-page"
+                href="/admin/quan-ly-don-hang/?page={{currentPage}}">{{currentPage}}</a></li>
+
+        {{#if hasNextPage}}
+        <li class="page-item"><a class="page-link" href="/admin/quan-ly-don-hang/?page={{nextPage}}">{{nextPage}}</a>
+        </li>
+        {{/if}}
+
+        {{#if (isEqualTo lastPage currentPage) }}
+        {{#if (isEqualTo nextPage lastPage) }}
+        <li class="page-item"><a class="page-link" href="/admin/quan-ly-don-hang/?page={{lastPage}}">{{lastPage}}</a>
+        </li>
+        {{/if}}
+        {{/if}}
+
+
+        <li class="page-item">
+            <a class="page-link {{#unless hasNextPage}}disabled{{/unless}}"
+                href="/admin/quan-ly-don-hang/?page={{nextPage}}" aria-label="Next">
+                <span>Next</span>
+                <span><i class="fas fa-chevron-right"></i></span>
+            </a>
+
+        </li>
+    </ul>
+</div>
